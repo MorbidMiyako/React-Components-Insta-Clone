@@ -1,23 +1,25 @@
-import React from 'react';
-
+import React, { useState } from 'react'; 
+ 
 const LikeSection = props => {
+  console.log("likes", props.data)
+  const [likes, setLikes] = useState(props.data)
   return (
     <div>
-    <div
-      className="like-section"
-      key="likes-icons-container"
-    >
-      <div className="like-section-wrapper">
-        <i className="far fa-heart" />
+      <div
+        className="like-section"
+        key="likes-icons-container"
+      >
+        <div className="like-section-wrapper">
+          <i className="far fa-heart" onClick={() => {setLikes(likes + 1)}} />
+        </div>
+        <div className="like-section-wrapper">
+          <i className="far fa-comment" />
+        </div>
       </div>
-      <div className="like-section-wrapper">
-        <i className="far fa-comment" />
-      </div>
+      <p className="like-number">
+
+        {props.data} likes</p>
     </div>
-    <p className="like-number">
-      
-      likes</p>
-</div>
   )
 };
 
