@@ -9,7 +9,7 @@ const CommentSection = props => {
 
   return (
     <div>
-      {console.log(props)}
+      {console.log("commentInput in CommentSection", props)}
       {props.comments.map(i => {
         return <Comment comment={i} />
       })}
